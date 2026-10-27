@@ -38,32 +38,10 @@ export default function Header() {
             <span className="font-serif text-title-md tracking-tight text-on-surface leading-tight font-medium">
               Foodiverse
             </span>
-            <span className="text-label-sm uppercase tracking-widest text-on-surface-variant font-bold">
-              Hospitality Advisory
-            </span>
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-space-md">
-          {navLinks.map((link) => {
-            const isActive = activeNav === link.name;
-            return (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setActiveNav(link.name)}
-                className={`transition-colors whitespace-nowrap text-body-md ${
-                  isActive
-                    ? "text-primary font-title-sm underline decoration-primary underline-offset-8 font-semibold"
-                    : "text-on-surface-variant hover:text-on-surface font-normal"
-                }`}
-              >
-                {link.name}
-              </a>
-            );
-          })}
-        </nav>
+
 
         {/* Actions & Contact */}
         <div className="flex items-center gap-space-sm shrink-0">
@@ -100,12 +78,6 @@ export default function Header() {
             Schedule Functional Audit
           </a>
 
-          <div
-            className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm text-on-primary"
-            title="Advisory Member"
-          >
-            <span className="material-symbols-outlined text-[18px]">person</span>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -124,25 +96,7 @@ export default function Header() {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="xl:hidden bg-surface border-b border-surface-variant/80 px-gutter py-4 flex flex-col gap-3 shadow-lg animate-in fade-in duration-200">
-          <nav className="flex flex-col gap-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => {
-                  setActiveNav(link.name);
-                  setMobileMenuOpen(false);
-                }}
-                className={`py-2 px-3 rounded-lg transition-colors text-body-md ${
-                  activeNav === link.name
-                    ? "bg-surface-container font-semibold text-primary"
-                    : "text-on-surface hover:bg-surface-container-low"
-                }`}
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
+
           <div className="pt-3 border-t border-surface-variant flex flex-col gap-2.5">
             <a
               href="tel:+917994458027"
