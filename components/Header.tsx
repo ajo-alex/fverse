@@ -1,92 +1,102 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
   { name: "About", href: "#about" },
-  { name: "Mission & Vision", href: "#mission-vision" },
-  { name: "6-Step Launch Plan", href: "#pipeline-section" },
-  { name: "Our Process", href: "#our-process" },
-  { name: "Why Choose Us", href: "#why-choose-us" },
-  { name: "Global Footprint", href: "#global-footprint" },
-  { name: "Leadership Team", href: "#leadership-team" },
+  { name: "Services", href: "#services" },
+  { name: "Process", href: "#process" },
+  { name: "Launch Plan", href: "#launch-plan" },
+  { name: "Work", href: "#case-studies" },
+  { name: "Principals", href: "#principals" },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeNav, setActiveNav] = useState("About");
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_12px_rgba(28,27,26,0.05)] border-b border-surface-variant/40">
-      <div className="h-20 w-full px-gutter flex items-center justify-between gap-space-md max-w-7xl mx-auto">
-        {/* Brand Logo */}
+    <header className="fixed top-0 left-0 right-0 w-full z-50 bg-[#100B06]/92 backdrop-blur-xl border-b border-[rgba(190,141,63,0.2)] transition-all">
+      {/* Top Editorial Ticker Strip */}
+      <div className="hidden lg:flex items-center justify-between px-6 py-1 bg-[#16100A] border-b border-[rgba(190,141,63,0.15)] text-[11px] font-mono tracking-widest text-[#C8BBA8] uppercase">
+        <div className="flex items-center gap-4">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#BE8D3F] animate-pulse" />
+          <span className="text-[#F5E4C7] font-semibold">FOODIVERSE HOSPITALITY ADVISORY</span>
+          <span className="text-[rgba(200,187,168,0.3)]">/</span>
+          <span>TORONTO • DUBAI • MUMBAI • MELBOURNE</span>
+        </div>
+        <div className="flex items-center gap-6">
+          <a
+            href="tel:+917994458027"
+            className="hover:text-[#BE8D3F] transition-colors flex items-center gap-1.5"
+          >
+            <span className="text-[#BE8D3F]">TEL:</span>
+            <span>+91-7994458027</span>
+          </a>
+          <span className="text-[rgba(200,187,168,0.3)]">/</span>
+          <a
+            href="mailto:foodiversehospitality@gmail.com"
+            className="hover:text-[#BE8D3F] transition-colors"
+          >
+            foodiversehospitality@gmail.com
+          </a>
+        </div>
+      </div>
+
+      {/* Main Nav Bar */}
+      <div className="h-18 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto flex items-center justify-between gap-6">
+        {/* Brand Logo & Editorial Typography */}
         <Link
           href="#"
-          className="flex items-center gap-space-sm shrink-0 group focus:outline-none"
+          className="flex items-center gap-3 shrink-0 group focus:outline-none"
         >
-          <Image
-            alt="Foodiverse Brand Logo"
-            className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
-            src="https://lh3.googleusercontent.com/aida/AEtjO1W5ryWGDsfPquLCsCn8pbbQ2_UH6qlcgBTOkaGJsZr5y2_Oe8mmtPrpmV2gOwvk3Hf6WS90kgc8ph5ldkkigUVrFg0QPu3iJejeFyLXxElpjQqh2WHhEWoClJQy0Vn4emhhRaidhHelFLvss8Fmjcn-d_ZWSyAwVDWHz7bkwNQhbq1XZIyil3PmDpRbAk_W0f0e8gtV_7Lw2_GG2qTrkESfmrpwpcN0sI0-0HTcmq7mgcIruohuytbcyezR"
-            width={140}
-            height={32}
-            priority
-          />
+          <div className="w-9 h-9 rounded-sm bg-[#BE8D3F]/15 border border-[#BE8D3F]/40 flex items-center justify-center text-[#BE8D3F] shadow-[0_0_16px_rgba(190,141,63,0.2)] group-hover:border-[#BE8D3F] group-hover:scale-105 transition-all">
+            <span className="material-symbols-outlined text-[20px]">
+              restaurant
+            </span>
+          </div>
           <div className="flex flex-col">
-            <span className="font-serif text-title-md tracking-tight text-on-surface leading-tight font-medium">
-              Foodiverse
+            <span className="font-display text-xl sm:text-2xl font-black tracking-tight text-[#F5E4C7] group-hover:text-[#BE8D3F] transition-colors leading-none">
+              FOODIVERSE
+            </span>
+            <span className="font-mono text-[9px] uppercase tracking-widest text-[#BE8D3F] mt-1 font-semibold">
+              ADVISORY ATELIER
             </span>
           </div>
         </Link>
 
-
-
-        {/* Actions & Contact */}
-        <div className="flex items-center gap-space-sm shrink-0">
-          <div className="hidden lg:flex items-center gap-space-sm pr-space-xs border-r border-outline-variant/40 pr-3">
+        {/* Minimal Editorial Links */}
+        <nav className="hidden lg:flex items-center gap-7 xl:gap-8">
+          {navLinks.map((link) => (
             <a
-              className="text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5"
-              href="tel:+917994458027"
+              key={link.name}
+              href={link.href}
+              className="font-mono text-xs uppercase tracking-wider text-[#C8BBA8] hover:text-[#BE8D3F] transition-all relative py-1 group"
             >
-              <span className="material-symbols-outlined text-[16px] text-primary">
-                call
-              </span>
-              <span className="text-label-md font-semibold text-on-surface">
-                +91-7994458027
-              </span>
+              <span>{link.name}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#BE8D3F] group-hover:w-full transition-all duration-300" />
             </a>
-            <span className="text-outline-variant font-light">|</span>
-            <a
-              className="text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5"
-              href="mailto:foodiversehospitality@gmail.com"
-            >
-              <span className="material-symbols-outlined text-[16px] text-primary">
-                mail
-              </span>
-              <span className="text-label-md font-semibold text-on-surface">
-                Inquire
-              </span>
-            </a>
-          </div>
+          ))}
+        </nav>
 
+        {/* Action Button */}
+        <div className="flex items-center gap-3">
           <a
-            className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-primary text-on-primary text-title-sm font-semibold transition-all duration-300 hover:bg-primary-container shadow-[0_4px_16px_-2px_rgba(168,50,17,0.35)] hover:shadow-[0_0_24px_rgba(168,50,17,0.5)] whitespace-nowrap"
             href="#audit-scheduler"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#BE8D3F] text-[#100B06] font-mono text-xs font-bold uppercase tracking-wider editorial-btn-gold"
           >
-            Schedule Functional Audit
+            <span>SCHEDULE AUDIT</span>
+            <span className="text-sm font-bold">↗</span>
           </a>
-
 
           {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-2 rounded-lg text-on-surface hover:bg-surface-container transition-colors ml-1"
+            className="lg:hidden p-2 rounded-sm bg-[#19120C] border border-[rgba(190,141,63,0.3)] text-[#F5E4C7] hover:border-[#BE8D3F] transition-colors"
             aria-label="Toggle navigation menu"
           >
-            <span className="material-symbols-outlined text-[24px]">
+            <span className="material-symbols-outlined text-[22px] block">
               {mobileMenuOpen ? "close" : "menu"}
             </span>
           </button>
@@ -95,35 +105,47 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-surface border-b border-surface-variant/80 px-gutter py-4 flex flex-col gap-3 shadow-lg animate-in fade-in duration-200">
+        <div className="lg:hidden bg-[#16100A] border-t border-[rgba(190,141,63,0.25)] px-6 py-8 flex flex-col gap-6 shadow-[0_20px_40px_rgba(0,0,0,0.8)] animate-in fade-in duration-200">
+          <div className="font-mono text-[11px] text-[#BE8D3F] uppercase tracking-widest border-b border-[rgba(190,141,63,0.15)] pb-3">
+            // NAVIGATION DIRECTORY
+          </div>
+          <nav className="flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-display text-2xl font-black uppercase tracking-tight text-[#F5E4C7] hover:text-[#BE8D3F] transition-colors flex items-center justify-between"
+              >
+                <span>{link.name}</span>
+                <span className="font-mono text-sm text-[#BE8D3F]">↗</span>
+              </a>
+            ))}
+          </nav>
 
-          <div className="pt-3 border-t border-surface-variant flex flex-col gap-2.5">
+          <div className="pt-6 border-t border-[rgba(190,141,63,0.15)] flex flex-col gap-3 font-mono text-xs">
+            <span className="text-[#C8BBA8] uppercase tracking-wider">// DIRECT LINES</span>
             <a
               href="tel:+917994458027"
-              className="flex items-center gap-2 text-body-sm text-on-surface-variant"
+              className="text-[#F5E4C7] hover:text-[#BE8D3F] font-bold"
             >
-              <span className="material-symbols-outlined text-[16px] text-primary">
-                call
-              </span>
-              <span>+91-7994458027</span>
+              +91-7994458027
             </a>
             <a
               href="mailto:foodiversehospitality@gmail.com"
-              className="flex items-center gap-2 text-body-sm text-on-surface-variant"
+              className="text-[#F5E4C7] hover:text-[#BE8D3F] font-bold break-all"
             >
-              <span className="material-symbols-outlined text-[16px] text-primary">
-                mail
-              </span>
-              <span>foodiversehospitality@gmail.com</span>
-            </a>
-            <a
-              className="mt-2 inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-primary text-on-primary text-title-sm font-semibold text-center"
-              href="#audit-scheduler"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Schedule Functional Audit
+              foodiversehospitality@gmail.com
             </a>
           </div>
+
+          <a
+            href="#audit-scheduler"
+            onClick={() => setMobileMenuOpen(false)}
+            className="w-full text-center py-3.5 bg-[#BE8D3F] text-[#100B06] font-mono text-xs font-bold uppercase tracking-wider editorial-btn-gold mt-2"
+          >
+            COMMISSION FUNCTIONAL AUDIT ↗
+          </a>
         </div>
       )}
     </header>

@@ -1,157 +1,141 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-surface-container-low text-on-surface shadow-[0_-1px_10px_rgba(0,0,0,0.02)] border-t border-outline-variant/30">
-      <div className="w-full px-gutter py-space-xl max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-lg mb-space-lg">
-          {/* Brand & Mission */}
-          <div className="lg:col-span-4 flex flex-col gap-space-sm">
-            <div className="flex items-center gap-space-sm">
-              <Image
-                alt="Foodiverse Brand Logo"
-                className="h-8 w-auto object-contain"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1W5ryWGDsfPquLCsCn8pbbQ2_UH6qlcgBTOkaGJsZr5y2_Oe8mmtPrpmV2gOwvk3Hf6WS90kgc8ph5ldkkigUVrFg0QPu3iJejeFyLXxElpjQqh2WHhEWoClJQy0Vn4emhhRaidhHelFLvss8Fmjcn-d_ZWSyAwVDWHz7bkwNQhbq1XZIyil3PmDpRbAk_W0f0e8gtV_7Lw2_GG2qTrkESfmrpwpcN0sI0-0HTcmq7mgcIruohuytbcyezR"
-                width={140}
-                height={32}
-              />
-              <span className="font-serif text-2xl font-medium text-on-surface">
-                Foodiverse
-              </span>
+    <footer className="w-full bg-[#0D0804] text-[#F5E4C7] border-t border-[rgba(190,141,63,0.25)]">
+      {/* Top Giant Brand Typography Banner */}
+      <div className="reveal-init reveal-fade-up border-b border-[rgba(190,141,63,0.18)] px-4 sm:px-6 md:px-8 py-14 md:py-20 max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+        <div>
+          <span className="font-mono text-xs font-bold text-[#BE8D3F] uppercase tracking-widest block mb-4">
+            [FOODIVERSE ATELIER &amp; CULINARY LAB]
+          </span>
+          <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-tight text-[#F5E4C7] leading-none">
+            FOODIVERSE
+          </h2>
+        </div>
+
+        <div className="max-w-md font-mono text-xs text-[#C8BBA8] leading-relaxed border-l border-[#BE8D3F] pl-4">
+          Haute-gastronomy conceptualization, Michelin-grade culinary architecture, and turnkey operational rollouts for world-class hotel groups and ambitious independent restaurateurs.
+        </div>
+      </div>
+
+      {/* Main Grid Directory */}
+      <div className="reveal-init reveal-fade-up delay-150 reveal-cascade px-4 sm:px-6 md:px-8 py-14 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 font-mono text-xs">
+        {/* Brand Col */}
+        <div className="reveal-item lg:col-span-4 flex flex-col justify-between gap-6">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-sm bg-[#BE8D3F]/15 border border-[#BE8D3F]/40 flex items-center justify-center text-[#BE8D3F]">
+              <span className="material-symbols-outlined text-[18px]">restaurant</span>
             </div>
-            <p className="text-body-md text-on-surface-variant max-w-sm leading-relaxed">
-              Haute-gastronomy conceptualization, Michelin-grade culinary
-              architecture, and turnkey operational rollouts for world-class
-              hotel groups and discerning independent restaurateurs.
-            </p>
-            <div className="flex items-center gap-space-sm pt-space-xs">
-              <span className="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant text-label-sm tracking-widest uppercase font-bold">
-                Atelier &amp; Culinary Lab
-              </span>
-            </div>
+            <span className="font-display text-xl font-bold uppercase tracking-tight text-[#F5E4C7]">
+              FOODIVERSE
+            </span>
           </div>
 
-          {/* Global Footprint */}
-          <div className="lg:col-span-3 flex flex-col gap-space-sm">
-            <span className="text-title-sm text-on-surface font-semibold tracking-wide uppercase">
-              Global Footprint
-            </span>
-            <p className="text-body-sm text-on-surface-variant leading-relaxed">
-              Active advisory hubs delivering concept engineering across key
-              culinary capitals:
-            </p>
-            <div className="flex flex-wrap gap-2 pt-1">
-              <span className="px-2.5 py-1 rounded bg-surface-container-high text-on-surface text-body-sm font-medium">
-                Canada
-              </span>
-              <span className="px-2.5 py-1 rounded bg-surface-container-high text-on-surface text-body-sm font-medium">
-                India
-              </span>
-              <span className="px-2.5 py-1 rounded bg-surface-container-high text-on-surface text-body-sm font-medium">
-                Dubai
-              </span>
-              <span className="px-2.5 py-1 rounded bg-surface-container-high text-on-surface text-body-sm font-medium">
-                Australia
-              </span>
-              <span className="px-2.5 py-1 rounded bg-surface-container-high text-on-surface text-body-sm font-medium">
-                Sri Lanka
-              </span>
-            </div>
-          </div>
+          <p className="text-[#C8BBA8] leading-relaxed max-w-sm font-sans text-sm font-normal">
+            Turning kitchen complexity into compounding gross margin. We eliminate prime cost leaks before opening night.
+          </p>
 
-          {/* Navigation */}
-          <div className="lg:col-span-2 flex flex-col gap-space-sm">
-            <span className="text-title-sm text-on-surface font-semibold tracking-wide uppercase">
-              Navigation
-            </span>
-            <div className="flex flex-col gap-2">
+          <div className="inline-block self-start px-2.5 py-1 bg-[#BE8D3F]/15 border border-[#BE8D3F]/30 text-[#BE8D3F] font-bold uppercase text-[10px] tracking-wider">
+            ATELIER // REGISTERED ADVISORY
+          </div>
+        </div>
+
+        {/* Global Footprint */}
+        <div className="reveal-item lg:col-span-3 flex flex-col gap-3">
+          <span className="text-[#BE8D3F] uppercase font-bold tracking-wider">
+            // GLOBAL BUREAUS
+          </span>
+          <p className="text-[#C8BBA8] text-[11px] leading-relaxed mb-2 font-sans">
+            Active advisory hubs delivering concept engineering across key culinary capitals:
+          </p>
+          <div className="flex flex-wrap gap-2 text-[#F5E4C7] font-semibold text-[11px]">
+            <span className="bg-[#16100A] px-2.5 py-1 border border-[rgba(190,141,63,0.2)]">🇨🇦 CANADA</span>
+            <span className="bg-[#16100A] px-2.5 py-1 border border-[rgba(190,141,63,0.2)]">🇦🇪 DUBAI</span>
+            <span className="bg-[#16100A] px-2.5 py-1 border border-[rgba(190,141,63,0.2)]">🇮🇳 INDIA</span>
+            <span className="bg-[#16100A] px-2.5 py-1 border border-[rgba(190,141,63,0.2)]">🇦🇺 AUSTRALIA</span>
+            <span className="bg-[#16100A] px-2.5 py-1 border border-[rgba(190,141,63,0.2)]">🇱🇰 SRI LANKA</span>
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <div className="reveal-item lg:col-span-2 flex flex-col gap-3">
+          <span className="text-[#BE8D3F] uppercase font-bold tracking-wider">
+            // DIRECTORY
+          </span>
+          <div className="flex flex-col gap-2.5 font-bold text-[#C8BBA8]">
+            <a className="hover:text-[#BE8D3F] transition-colors" href="#about">
+              → ABOUT ATELIER
+            </a>
+            <a className="hover:text-[#BE8D3F] transition-colors" href="#services">
+              → SERVICES &amp; AUDITS
+            </a>
+            <a className="hover:text-[#BE8D3F] transition-colors" href="#process">
+              → PROCESS WORKFLOW
+            </a>
+            <a className="hover:text-[#BE8D3F] transition-colors" href="#launch-plan">
+              → 6-STEP LAUNCH
+            </a>
+            <a className="hover:text-[#BE8D3F] transition-colors" href="#case-studies">
+              → SELECTED WORK
+            </a>
+            <a className="hover:text-[#BE8D3F] transition-colors" href="#principals">
+              → THE PRINCIPALS
+            </a>
+          </div>
+        </div>
+
+        {/* Direct Inquiries */}
+        <div className="reveal-item lg:col-span-3 flex flex-col gap-3">
+          <span className="text-[#BE8D3F] uppercase font-bold tracking-wider">
+            // DIRECT CHANNELS
+          </span>
+          <div className="space-y-3">
+            <div>
+              <div className="text-[#C8BBA8]/60 text-[10px] uppercase">DIRECT LINE / WHATSAPP:</div>
               <a
-                className="text-body-sm text-on-surface-variant hover:text-primary transition-colors"
-                href="#about"
+                href="tel:+917994458027"
+                className="text-[#F5E4C7] hover:text-[#BE8D3F] font-bold text-sm"
               >
-                About Atelier
-              </a>
-              <a
-                className="text-body-sm text-on-surface-variant hover:text-primary transition-colors"
-                href="#pipeline-section"
-              >
-                6-Step Launch Plan
-              </a>
-              <a
-                className="text-body-sm text-on-surface-variant hover:text-primary transition-colors"
-                href="#our-process"
-              >
-                Culinary Architecture
-              </a>
-              <a
-                className="text-body-sm text-on-surface-variant hover:text-primary transition-colors"
-                href="#why-choose-us"
-              >
-                Why Choose Us
-              </a>
-              <a
-                className="text-body-sm text-on-surface-variant hover:text-primary transition-colors"
-                href="#leadership-team"
-              >
-                Principals &amp; Chefs
+                +91-7994458027 ↗
               </a>
             </div>
-          </div>
-
-          {/* Direct Inquiries */}
-          <div className="lg:col-span-3 flex flex-col gap-space-sm">
-            <span className="text-title-sm text-on-surface font-semibold tracking-wide uppercase">
-              Direct Inquiries
-            </span>
-            <div className="flex flex-col gap-2.5 text-body-sm text-on-surface-variant">
-              <div className="flex items-start gap-2">
-                <span className="material-symbols-outlined text-[18px] text-primary mt-0.5">
-                  call
-                </span>
-                <a
-                  className="hover:text-primary transition-colors font-medium text-on-surface"
-                  href="tel:+917994458027"
-                >
-                  +91-7994458027
-                </a>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="material-symbols-outlined text-[18px] text-primary mt-0.5">
-                  mail
-                </span>
-                <a
-                  className="hover:text-primary transition-colors break-all"
-                  href="mailto:foodiversehospitality@gmail.com"
-                >
-                  foodiversehospitality@gmail.com
-                </a>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="material-symbols-outlined text-[18px] text-primary mt-0.5">
-                  location_on
-                </span>
-                <span>Executive Advisory Board &amp; Regional Bureaus</span>
+            <div>
+              <div className="text-[#C8BBA8]/60 text-[10px] uppercase">EXECUTIVE INQUIRIES:</div>
+              <a
+                href="mailto:foodiversehospitality@gmail.com"
+                className="text-[#F5E4C7] hover:text-[#BE8D3F] font-bold text-xs break-all"
+              >
+                foodiversehospitality@gmail.com ↗
+              </a>
+            </div>
+            <div>
+              <div className="text-[#C8BBA8]/60 text-[10px] uppercase">ADVISORY BOARD:</div>
+              <div className="text-[#C8BBA8] text-[11px]">
+                Regional Bureaus &amp; Culinary Lab
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Legal & Copyright */}
-        <div className="pt-space-md border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-sm">
-          <span className="text-body-sm text-on-surface-variant">
-            &copy; 2025 Foodiverse Hospitality Consulting. All rights reserved.
-          </span>
-          <div className="flex items-center gap-space-md text-body-sm text-on-surface-variant">
-            <span className="hover:text-on-surface transition-colors cursor-pointer">
-              Privacy Charter
-            </span>
-            <span className="hover:text-on-surface transition-colors cursor-pointer">
-              Terms of Engagement
-            </span>
-            <span className="hover:text-on-surface transition-colors cursor-pointer">
-              Bespoke NDA
-            </span>
-          </div>
+      {/* Bottom Legal Notice */}
+      <div className="reveal-init reveal-fade-up delay-200 border-t border-[rgba(190,141,63,0.18)] px-4 sm:px-6 md:px-8 py-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-[11px] text-[#C8BBA8]/60">
+        <div>
+          © 2025 FOODIVERSE HOSPITALITY ADVISORY GROUP. ALL RIGHTS RESERVED.
+        </div>
+        <div className="flex items-center gap-6">
+          <Link href="#audit-scheduler" className="hover:text-[#BE8D3F] transition-colors">
+            PRIVACY CHARTER
+          </Link>
+          <span>/</span>
+          <Link href="#audit-scheduler" className="hover:text-[#BE8D3F] transition-colors">
+            TERMS OF ENGAGEMENT
+          </Link>
+          <span>/</span>
+          <Link href="#audit-scheduler" className="hover:text-[#BE8D3F] transition-colors">
+            MUTUAL NDA
+          </Link>
         </div>
       </div>
     </footer>
